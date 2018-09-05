@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C11E3D9F213EABE900436C85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3D9E213EABE900436C85 /* AppDelegate.m */; };
-		C11E3DA2213EABE900436C85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3DA1213EABE900436C85 /* ViewController.m */; };
 		C11E3DA5213EABE900436C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C11E3DA3213EABE900436C85 /* Main.storyboard */; };
 		C11E3DA7213EABE900436C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C11E3DA6213EABE900436C85 /* Assets.xcassets */; };
 		C11E3DAA213EABE900436C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C11E3DA8213EABE900436C85 /* LaunchScreen.storyboard */; };
 		C11E3DAD213EABE900436C85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3DAC213EABE900436C85 /* main.m */; };
 		C11E3DB7213EABE900436C85 /* Movies_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3DB6213EABE900436C85 /* Movies_AppTests.m */; };
 		C11E3DC2213EABE900436C85 /* Movies_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3DC1213EABE900436C85 /* Movies_AppUITests.m */; };
+		C1663D97213FBB1D007BA386 /* HomeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1663D96213FBB1D007BA386 /* HomeCollectionViewController.m */; };
+		C1663D99213FC1FB007BA386 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C1663D98213FC1FB007BA386 /* 1.png */; };
 		DFD3FB71148374B2F683E41A /* libPods-Movies App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E590A857A30A0331FEDF57F /* libPods-Movies App.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +42,6 @@
 		C11E3D9A213EABE900436C85 /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11E3D9D213EABE900436C85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C11E3D9E213EABE900436C85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C11E3DA0213EABE900436C85 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C11E3DA1213EABE900436C85 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C11E3DA4213EABE900436C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C11E3DA6213EABE900436C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C11E3DA9213EABE900436C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,9 @@
 		C11E3DBD213EABE900436C85 /* Movies AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movies AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11E3DC1213EABE900436C85 /* Movies_AppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movies_AppUITests.m; sourceTree = "<group>"; };
 		C11E3DC3213EABE900436C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1663D95213FBB1D007BA386 /* HomeCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewController.h; sourceTree = "<group>"; };
+		C1663D96213FBB1D007BA386 /* HomeCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewController.m; sourceTree = "<group>"; };
+		C1663D98213FC1FB007BA386 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		C4085758762BB8D4810287CF /* Pods-Movies App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movies App/Pods-Movies App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,11 +127,12 @@
 		C11E3D9C213EABE900436C85 /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				C1663D98213FC1FB007BA386 /* 1.png */,
 				C11E3D9D213EABE900436C85 /* AppDelegate.h */,
 				C11E3D9E213EABE900436C85 /* AppDelegate.m */,
-				C11E3DA0213EABE900436C85 /* ViewController.h */,
-				C11E3DA1213EABE900436C85 /* ViewController.m */,
 				C11E3DA3213EABE900436C85 /* Main.storyboard */,
+				C1663D95213FBB1D007BA386 /* HomeCollectionViewController.h */,
+				C1663D96213FBB1D007BA386 /* HomeCollectionViewController.m */,
 				C11E3DA6213EABE900436C85 /* Assets.xcassets */,
 				C11E3DA8213EABE900436C85 /* LaunchScreen.storyboard */,
 				C11E3DAB213EABE900436C85 /* Info.plist */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C11E3DAA213EABE900436C85 /* LaunchScreen.storyboard in Resources */,
+				C1663D99213FC1FB007BA386 /* 1.png in Resources */,
 				C11E3DA7213EABE900436C85 /* Assets.xcassets in Resources */,
 				C11E3DA5213EABE900436C85 /* Main.storyboard in Resources */,
 			);
@@ -291,15 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Movies App-checkManifestLockResult.txt",
 			);
@@ -315,9 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C11E3DA2213EABE900436C85 /* ViewController.m in Sources */,
 				C11E3DAD213EABE900436C85 /* main.m in Sources */,
 				C11E3D9F213EABE900436C85 /* AppDelegate.m in Sources */,
+				C1663D97213FBB1D007BA386 /* HomeCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
