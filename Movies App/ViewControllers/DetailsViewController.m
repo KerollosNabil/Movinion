@@ -7,10 +7,15 @@
 //
 
 #import "DetailsViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface DetailsViewController (){
-    
-}
+@interface DetailsViewController ()
+
+@property (strong, nonatomic) NSMutableArray *trailsName;
+@property (strong, nonatomic) NSMutableArray *trailsID;
+@property (strong, nonatomic) NSMutableArray *review;
+@property (strong, nonatomic) NSMutableArray *reviewAu;
+
 
 @end
 
@@ -27,18 +32,24 @@
     [_movieScrollVeiw setContentSize:CGSizeMake(320, 1100)];
     // for test
     
-    [_moviePoster setImage:[UIImage imageNamed:@"1.png"]];
-    [_movieTitle setText:@"Chappie"];
-    [_movieDate setText:@"2015"];
-    [_movieRate setText:@"8.2"];
-    [_movieTime setText:@"120Min"];
-    
+    _net.movieLoadIsFinish=self;
     // Do any additional setup after loading the view.
 
 
 	
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [_net beginLoadFilmAtIndex:_movieId];
+    [_moviePoster sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"http://image.tmdb.org/t/p/w185/%@",_film_poster]]placeholderImage:[UIImage imageNamed:@"1.png"]];
+    [_movieTitle setText:_film_Time];
+    [_movieDate setText:_film_Date];
+    [_movieRate setText:_film_Rate];
+    [_movieTime setText:@"0Min"];
+    [_movieOverView setText:_film_OverView];
+}
 //====================== ( table Veiw ) ==================
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -47,9 +58,9 @@
     
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView.tag == 1){
-        return 3;
+        return [_trailsName count];
     }else{
-        return 3;
+        return [_review count];
     }
      // for test
     
@@ -67,15 +78,17 @@
         
         
         imageView.image = [UIImage imageNamed:@"Icon_6-128.png"];
-        [TrailerNum setText:@"Trailer1"];
-        
+        [TrailerNum setText:[_trailsName objectAtIndex:indexPath.row]];
+        //[TrailerNum setText:@"koko"];
         return cell;
         
         
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-        cell.textLabel.text= @"this is test cell 1";
-        cell.detailTextLabel.text = @"subtitle";
+        cell.textLabel.text= [_reviewAu objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [_review objectAtIndex:indexPath.row];
+        //cell.textLabel.text= @"koko";
+        //cell.detailTextLabel.text = @"koko";
         return cell;
     }
     
@@ -127,5 +140,23 @@
     <#code#>
 }
 */
+
+- (void)movieEndLoad:(int)pop {
+    _movieTime.text=[NSString stringWithFormat:@"%dMin",pop];
+}
+
+- (void)movieReviewEndLoad:(NSMutableArray *)reviewAuther :(NSMutableArray *)reviewCon {
+    _review = reviewCon;
+    _reviewAu = reviewAuther;
+    [_table2 reloadData];
+}
+
+- (void)movieTrailEndLoad:(NSMutableArray *)trailsN :(NSMutableArray *)trailsID {
+    _trailsName = trailsN;
+    _trailsID = trailsID;
+    [_table1 reloadData];
+}
+
+
 
 @end

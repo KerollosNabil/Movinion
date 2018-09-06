@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "finishingLoadd.h"
 
-@interface HomeCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
+
+@interface HomeCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, finishingLoadd>
 
 @end

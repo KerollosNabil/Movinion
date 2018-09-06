@@ -7,10 +7,16 @@
 //
 
 #import "HomeCollectionViewController.h"
+#import "DetailsViewController.h"
+#import "networking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeCollectionViewController ()
 @property (strong ,nonatomic) NSArray * posters;
 @property (nonatomic) CGFloat width, hight;
+@property (strong, nonatomic) DetailsViewController *details;
+@property (strong, nonatomic) networking *nets;
+@property (strong, nonatomic) const NSString *API_KEY;
 
 @end
 
@@ -25,11 +31,18 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    _posters = @[@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png"];
     
+    self.collectionView.backgroundColor = [UIColor blackColor];
+    _API_KEY = @"2cedf03071ab4a0d7be84506a254edad";
+    NSString *urls = @"http://api.themoviedb.org/3/discover/movie";
+    NSDictionary *params = @{@"sort_by":@"popularity.desc",@"api_key":_API_KEY};
+    
+    _nets = [[networking alloc] initWithBaseUrl:urls andParamters:params];
+    _nets.isFinish=self;
     _width = [UIScreen mainScreen].bounds.size.width;
     _hight = [UIScreen mainScreen].bounds.size.height;
 
+    _details = [self.storyboard instantiateViewControllerWithIdentifier:@"Details"];
     // Do any additional setup after loading the view.
 }
 
@@ -60,16 +73,32 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return  CGSizeMake(_width/2, _hight*2/5);
+    return  CGSizeMake(_width/2, _hight*2/4);
+}
+-(void)didFinishLoad{
+    _posters = [_nets moviesPostersID];
+    printf("koko %lu\n",[_posters count]);
+    [self.collectionView reloadData];
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    Movie *currentMovie = [_nets MonieAtIndex:indexPath.row];
+    _details.film_Time = currentMovie.name;
+    _details.film_Date = currentMovie.releaseDate;
+    _details.film_Rate = [NSString stringWithFormat:@"%.1f", currentMovie.rate];
+    _details.film_OverView =currentMovie.movieDesctiption;
+    _details.film_poster = _posters[indexPath.row];
+    _details.net = _nets;
+    _details.movieId = indexPath.row;
+    [self.navigationController pushViewController:_details animated:YES];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
     UIImageView *post = [cell viewWithTag:1];
-    //printf("%f %f",_width,_hight);
-    post.frame = CGRectMake(0, 0, _width/2, _hight*2/5);
-    post.image = [UIImage imageNamed:_posters[indexPath.row]];
+    printf("  %s\n",[_posters[0] UTF8String]);
+    post.frame = CGRectMake(0, 0, _width/2, _hight*2/4);
+    [post sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"http://image.tmdb.org/t/p/w185/%@",_posters[indexPath.row]]]placeholderImage:[UIImage imageNamed:@"1.png"]];
     
     return cell;
 }
