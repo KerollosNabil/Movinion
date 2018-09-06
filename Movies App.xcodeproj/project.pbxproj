@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2205BEC021406FBF00FA9EFF /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2205BEBF21406FBF00FA9EFF /* DetailsViewController.m */; };
+		2258AA972141225C0016B312 /* Icon_6-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 2258AA962141225C0016B312 /* Icon_6-128.png */; };
 		C11E3D9F213EABE900436C85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E3D9E213EABE900436C85 /* AppDelegate.m */; };
 		C11E3DA5213EABE900436C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C11E3DA3213EABE900436C85 /* Main.storyboard */; };
 		C11E3DA7213EABE900436C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C11E3DA6213EABE900436C85 /* Assets.xcassets */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2205BEBE21406FBF00FA9EFF /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		2205BEBF21406FBF00FA9EFF /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		2258AA962141225C0016B312 /* Icon_6-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_6-128.png"; sourceTree = "<group>"; };
 		4E590A857A30A0331FEDF57F /* libPods-Movies App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Movies App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D06B0B100B872F7974D056 /* Pods-Movies App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movies App/Pods-Movies App.debug.xcconfig"; sourceTree = "<group>"; };
 		C11E3D9A213EABE900436C85 /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2205BEC121406FD100FA9EFF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C1663D95213FBB1D007BA386 /* HomeCollectionViewController.h */,
+				C1663D96213FBB1D007BA386 /* HomeCollectionViewController.m */,
+				2205BEBE21406FBF00FA9EFF /* DetailsViewController.h */,
+				2205BEBF21406FBF00FA9EFF /* DetailsViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		49B9AF5721EA330A35AC6D23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,12 +143,12 @@
 		C11E3D9C213EABE900436C85 /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				2258AA962141225C0016B312 /* Icon_6-128.png */,
 				C1663D98213FC1FB007BA386 /* 1.png */,
+				2205BEC121406FD100FA9EFF /* ViewControllers */,
 				C11E3D9D213EABE900436C85 /* AppDelegate.h */,
 				C11E3D9E213EABE900436C85 /* AppDelegate.m */,
 				C11E3DA3213EABE900436C85 /* Main.storyboard */,
-				C1663D95213FBB1D007BA386 /* HomeCollectionViewController.h */,
-				C1663D96213FBB1D007BA386 /* HomeCollectionViewController.m */,
 				C11E3DA6213EABE900436C85 /* Assets.xcassets */,
 				C11E3DA8213EABE900436C85 /* LaunchScreen.storyboard */,
 				C11E3DAB213EABE900436C85 /* Info.plist */,
@@ -222,7 +238,7 @@
 		C11E3D92213EABE900436C85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "kerollos nabil";
 				TargetAttributes = {
 					C11E3D99213EABE900436C85 = {
@@ -269,6 +285,7 @@
 				C11E3DAA213EABE900436C85 /* LaunchScreen.storyboard in Resources */,
 				C1663D99213FC1FB007BA386 /* 1.png in Resources */,
 				C11E3DA7213EABE900436C85 /* Assets.xcassets in Resources */,
+				2258AA972141225C0016B312 /* Icon_6-128.png in Resources */,
 				C11E3DA5213EABE900436C85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +335,7 @@
 				C11E3DAD213EABE900436C85 /* main.m in Sources */,
 				C11E3D9F213EABE900436C85 /* AppDelegate.m in Sources */,
 				C1663D97213FBB1D007BA386 /* HomeCollectionViewController.m in Sources */,
+				2205BEC021406FBF00FA9EFF /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +404,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -393,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -441,6 +461,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -448,6 +469,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
